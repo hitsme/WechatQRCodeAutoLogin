@@ -67,4 +67,8 @@ object Constant {
     const val WEIBO_ENABLE = "weibo"
     const val TAOBAO_ENABLE = "taobao"
     const val JINGDONG_ENABLE = "jingdong"
+    const val CONNECTMYSQL_STR="jdbc:mysql://192.168.31.68/mysql"
+    const  val CONNNECTSQLSERVER2008_STR="jdbc:jtds:sqlserver://10.0.0.111/java"
+    const  val CONNECTSQLITE_STR="jdbc:sqlite:data.db"
+    const  val CONNECTDERBY_STR="jdbc:derby:ormlitederby;create=true"
 }

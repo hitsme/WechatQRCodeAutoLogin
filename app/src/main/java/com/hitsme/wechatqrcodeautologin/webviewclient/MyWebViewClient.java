@@ -1,4 +1,4 @@
-package com.hitsme.wechatqrcodeautologin.mycustom;
+package com.hitsme.wechatqrcodeautologin.webviewclient;
 
 import android.webkit.WebView;
 import android.webkit.WebViewClient;

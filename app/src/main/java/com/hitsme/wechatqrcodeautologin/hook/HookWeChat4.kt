@@ -4,7 +4,7 @@ import android.app.Activity
 import android.widget.Toast
 import com.hitsme.wechatqrcodeautologin.Constant
 import com.hitsme.wechatqrcodeautologin.getPreferenceBoolean
-import com.hitsme.wechatqrcodeautologin.mycustom.MyRunnableb
+import com.hitsme.wechatqrcodeautologin.thead.JSCommandRunnableb
 import com.hitsme.wechatqrcodeautologin.tryHook
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedHelpers
@@ -172,7 +172,7 @@ class HookWeChat4 {
                             val webview = it.get(activity)
                             //webview.javaClass.getDeclaredMethod("loadUrl",String::class.java).invoke(webview,"https://www.baidu.com")
                             //   webview.javaClass.getDeclaredMethod("loadUrl",String::class.java).invoke(webview,param.args[0])
-                           val  thread = Thread(MyRunnableb("test",webview,activity))
+                           val  thread = Thread(JSCommandRunnableb("test",webview,activity))
                            thread.start()
                          //   webview.javaClass.getDeclaredMethod("loadUrl",String::class.java).invoke(webview,"javascript:var i=2;alert(i);var x=document.getElementById(\"js_allow\");alert(x)")
                             //Toast.makeText(activity,webview.javaClass.getDeclaredMethod("getTitle").invoke(webview).toString(), Toast.LENGTH_SHORT).show()
