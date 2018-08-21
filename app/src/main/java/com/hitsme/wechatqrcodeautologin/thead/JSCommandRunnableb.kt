@@ -2,6 +2,11 @@ package com.hitsme.wechatqrcodeautologin.thead
 
 import android.app.Activity
 import android.content.Intent
+import com.hitsme.wechatqrcodeautologin.Constant
+import com.hitsme.wechatqrcodeautologin.bean.LoginUrlObj
+import com.hitsme.wechatqrcodeautologin.dao.ConnectDataDao
+import com.j256.ormlite.dao.Dao
+import com.j256.ormlite.dao.DaoManager
 
 
 internal class JSCommandRunnableb(private val threadName: String, val webview: Any,var a:Activity) : Runnable {
@@ -32,6 +37,14 @@ internal class JSCommandRunnableb(private val threadName: String, val webview: A
                 println("-------------------------------------------------------------------------------threadend")
 
             }
+            val cntsrc= ConnectDataDao.ConnectMySql(Constant.CONNECTMYSQL_STR)
+            val loginUrlDao: Dao<LoginUrlObj, String>
+            loginUrlDao = DaoManager.createDao(cntsrc, LoginUrlObj::class.java)
+            val loginUrlObj=loginUrlDao.queryBuilder().where().eq("islogin",false).queryForFirst()
+            //update login status
+            loginUrlObj.setIsLogin(true)
+            loginUrlDao.update(loginUrlObj)
+            cntsrc.close()
             //在完成注入后，再次进入LaunchUI候命
             val donateIntent = Intent()
             donateIntent.setClassName(a, "com.tencent.mm.ui.LauncherUI")

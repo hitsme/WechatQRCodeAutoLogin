@@ -42,8 +42,8 @@ internal class LoginMonitoringRunnable(private val threadName: String,var a: Act
                     a.finish()
 
                     //update login status
-                    loginUrlObj.setIsLogin(true)
-                    loginUrlDao.update(loginUrlObj)
+                    //loginUrlObj.setIsLogin(true)
+                   // loginUrlDao.update(loginUrlObj)
 
                  // break
                 }
