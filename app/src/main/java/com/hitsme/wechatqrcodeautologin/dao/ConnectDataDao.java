@@ -73,7 +73,7 @@ public class ConnectDataDao {
             connectionSource = new JdbcConnectionSource(databaseUrl);
             ((JdbcConnectionSource) connectionSource).setUsername("root");
             ((JdbcConnectionSource) connectionSource)
-                    .setPassword("hitsme52035203");
+                    .setPassword("password");
           //  LoginUrlDao cd = new LoginUrlDao(connectionSource);
            // cd.performDBOperations(connectionSource);
         } catch (SQLException e) {
